@@ -58,6 +58,8 @@ public class URLsContent {
 
 	public static final String apiUrl = Global.DOMAIN + "api.php";
 	
+	public static final String wamUrl = Global.LIVE_DOMAIN + "WAM";
+	
 	public static String buildUrl(String url, String parameter) {
 		String temp;
 		if (url.contains("?")) {
