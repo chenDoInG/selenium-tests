@@ -151,12 +151,14 @@ public class Properties {
 		Global.DOMAIN = System.getProperty("base-address");
 		Global.LIVE_DOMAIN = System.getProperty("live-domain");
 		Global.LOG_VERBOSE = 2;
-		if (Global.DOMAIN.contains("dev"))
-		{
-			Global.LOGIN_BY_COOKIE = false;
-		}
-		else{
-			Global.LOGIN_BY_COOKIE = true;
+		if (Global.DOMAIN!=null){			
+			if (Global.DOMAIN.contains("dev"))
+			{
+				Global.LOGIN_BY_COOKIE = false;
+			}
+			else{
+				Global.LOGIN_BY_COOKIE = true;
+			}
 		}
 		Global.LOG_ENABLED = true; 
 	}
