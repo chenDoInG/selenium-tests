@@ -9,8 +9,8 @@ import com.wikia.webdriver.Common.Templates.TestTemplate;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.WAM.WamPageObject;
 
 public class WamTests extends TestTemplate{
-	
-	
+
+
 	/*
 	 * checking page content before and after pagination
 	 */
@@ -29,21 +29,29 @@ public class WamTests extends TestTemplate{
 
 	/*
 	 * select hub from vertical drop-down,
-	 * check that all wikis are from selected hub 
+	 * check that all wikis are from selected hub
 	 */
 	@Test(groups = { "Wam002", "Wam" })
 	public void wam_002(){
-		
+		WamPageObject wam = new WamPageObject(driver);
+		wam.getWamPage();
+		String hubName = "Entertainment";
+		wam.chooseVertical(hubName);
+		List<String> hubs = wam.getWikiHubList();
+		wam.compareHubs(hubs, hubName);
 	}
-	
+
 	/*
 	 * select date one day before today
-	 * check that wiki's list is different 
+	 * check that wiki's list is different
 	 */
 	@Test(groups = { "Wam003", "Wam" })
 	public void wam_003(){
-		
+		WamPageObject wam = new WamPageObject(driver);
+		wam.getWamPage();
+		List<String> todayUrls = wam.getWikiUrlList();
+		wam.clickPreviousDate();
+		List<String> yesterdayUrls = wam.getWikiUrlList();
+		Assertion.assertNotEquals(todayUrls, yesterdayUrls);
 	}
-	
-	
 }
