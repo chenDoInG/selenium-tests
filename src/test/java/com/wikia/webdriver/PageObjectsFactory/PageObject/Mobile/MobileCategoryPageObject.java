@@ -28,6 +28,12 @@ public class MobileCategoryPageObject extends MobileBasePageObject {
 	@FindBy(css = "h2.collSec")
 	private List<WebElement> chevronList;
 
+	@FindBy(css = "wkExhItm")
+	private List<WebElement> categoryExhibition;
+
+
+
+
 	public MobileArticlePageObject openCategory(){
 		getUrl(Global.DOMAIN+"wiki/Category:PMG");
 		waitForElementByElement(showAllButton);
@@ -43,6 +49,13 @@ public class MobileCategoryPageObject extends MobileBasePageObject {
 	public void clickHideAllButton (){
 		waitForElementByElement(hideAllButton);
 		hideAllButton.click();
+	}
+
+//code for check by Karol
+	public void verifyCategoryExhibition(){
+		for(WebElement elem:categoryExhibition){
+			Assertion.assertEquals("wkExhItm", elem.getAttribute("class"));
+		}
 	}
 
 	public void verifyChevronOpened(){
