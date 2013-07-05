@@ -41,6 +41,7 @@ public class URLsContent {
 	public static final String specialFollow = "wiki/Special:Following";
 	public static final String specialForum = "wiki/Special:Forum";
 	public static final String userMessageWall = "wiki/Message_Wall:";
+	public static final String specialStyleguide = "wiki/Special:Styleguide";
 
 	//Mediawiki Urls
 	public static final String mediaWikiCss = "MediaWiki:Wikia.css";
@@ -54,6 +55,9 @@ public class URLsContent {
 
     // WAM Scores page url
     public static final String wamPageUrl = "WAM";
+
+	// Styleguide pages
+	public static final String componentsStyleguide = specialStyleguide + "/Components";
 
 	// Extra sites - useful for monobook
 	// replace %user% with username
