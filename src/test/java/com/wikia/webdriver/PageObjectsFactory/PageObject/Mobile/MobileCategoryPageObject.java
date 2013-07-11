@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 
 import com.wikia.webdriver.Common.Core.Assertion;
 import com.wikia.webdriver.Common.Core.Global;
@@ -25,10 +26,10 @@ public class MobileCategoryPageObject extends MobileBasePageObject {
 	@FindBy(css = "#expAll.exp")
 	private WebElement hideAllButton;
 
-	@FindBy(css = "h2.collSec")
+	@FindBys(@FindBy(css = "h2.collSec"))
 	private List<WebElement> chevronList;
 
-	@FindBy(css = "wkExhItm")
+	@FindBys(@FindBy(css = ".wkExhItm"))
 	private List<WebElement> categoryExhibition;
 
 
@@ -51,11 +52,8 @@ public class MobileCategoryPageObject extends MobileBasePageObject {
 		hideAllButton.click();
 	}
 
-//code for check by Karol
 	public void verifyCategoryExhibition(){
-		for(WebElement elem:categoryExhibition){
-			Assertion.assertEquals("wkExhItm", elem.getAttribute("class"));
-		}
+		Assertion.assertTrue(categoryExhibition.size() == 4);
 	}
 
 	public void verifyChevronOpened(){
