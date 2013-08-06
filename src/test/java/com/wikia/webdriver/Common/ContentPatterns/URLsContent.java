@@ -44,6 +44,7 @@ public class URLsContent {
 	public static final String userMessageWall = "wiki/Message_Wall:";
 	public static final String specialMultiWikiFinderPage = "wiki/Special:Multiwikifinder";
 	public static final String logout = "wiki/Special:UserLogout?noexternals=1";
+	public static final String specialSearch = "wiki/Special:Search";
 
 	//Mediawiki Urls
 	public static final String mediaWikiCss = "MediaWiki:Wikia.css";

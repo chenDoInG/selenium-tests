@@ -40,6 +40,7 @@ import com.wikia.webdriver.Common.Properties.Properties;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.Article.ArticlePageObject;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.Article.EditMode.VisualEditModePageObject;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.ForumPageObject.ForumPageObject;
+import com.wikia.webdriver.PageObjectsFactory.PageObject.Search.IntraWikiSearch.IntraWikiSearchPageObject;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.SignUp.UserProfilePageObject;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.Special.SpecialAdminDashboardPageObject;
 import com.wikia.webdriver.PageObjectsFactory.PageObject.Special.SpecialCreatePagePageObject;
@@ -208,6 +209,11 @@ public class WikiBasePageObject extends BasePageObject {
 	public SpecialMultipleUploadPageObject openSpecialMultipleUpload() {
 		getUrl(Global.DOMAIN + URLsContent.specialMultipleUpload);
 		return new SpecialMultipleUploadPageObject(driver);
+	}
+
+	public IntraWikiSearchPageObject openSpecialSearchPage(String wikiURL) {
+		getUrl(wikiURL + URLsContent.specialSearch);
+		return new IntraWikiSearchPageObject(driver);
 	}
 
 	private void clickContributeButton() {

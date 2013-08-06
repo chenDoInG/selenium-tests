@@ -1,9 +1,16 @@
 package com.wikia.webdriver.PageObjectsFactory.PageObject.Search.IntraWikiSearch;
 
-public class IntraWikiSearchPageObject {
+import org.openqa.selenium.WebDriver;
 
-	public IntraWikiSearchPageObject() {
-		// TODO Auto-generated constructor stub
+import com.wikia.webdriver.PageObjectsFactory.PageObject.WikiBasePageObject;
+
+public class IntraWikiSearchPageObject extends WikiBasePageObject{
+
+	/**
+	 * @param driver
+	 */
+	public IntraWikiSearchPageObject(WebDriver driver) {
+		super(driver);
 	}
 
 }

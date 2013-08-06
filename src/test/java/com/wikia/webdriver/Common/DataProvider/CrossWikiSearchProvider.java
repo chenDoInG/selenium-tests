@@ -8,7 +8,8 @@ import org.testng.annotations.DataProvider;
  * Time: 16:27
  */
 public class CrossWikiSearchProvider {
-    @DataProvider
+
+	@DataProvider
     public static final Object[][] getExactMatchQueries() {
         return new Object[][]{
             {
@@ -26,4 +27,15 @@ public class CrossWikiSearchProvider {
             }
         };
     }
+
+	@DataProvider
+	public static final Object[][] getExactMatchQueriesCommunity() {
+		return new Object[][]{
+				{
+					"community", "gta", "GTA Wiki"
+				}, {
+					"community", "gta1", "GTA Wiki1"
+				}
+		};
+	}
 }
